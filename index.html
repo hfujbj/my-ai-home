@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>我的 AI 小屋</title>
+                <link rel="stylesheet" href="style.css">
+                </head>
+                
+                <body>
+                
+                    <div class="chat-container">
+                    
+                    <header class="chat-header">
+
+                            <div class="header-info">
+                                    <div class="header-avatar">♡</div>
+
+                                            <div>
+                                                        <h1>我的 AI 小屋</h1>
+                                                                    <p>陪你聊天的小 AI</p>
+                                                                            </div>
+                                                                                </div>
+
+                                                                                    <div class="header-actions">
+
+                                                                                            <button class="menu-button" id="menuButton" aria-label="打开菜单">☰</button>
+
+                                                                                            <div class="online-status">
+                                                                                                        <span class="status-dot"></span>
+                                                                                                                    在线
+                                                                                                                            </div>
+
+                                                                                                                                    <button class="settings-button" id="settingsButton">
+                                                                                                                                                ⚙
+                                                                                                                                                        </button>
+
+                                                                                                                                                            </div>
+
+                                                                                                                                                            </header>        
+                                                            <div class="settings-panel" id="settingsPanel">
+
+                                                                    <div class="settings-header">
+                                                                            <h2>✨ 小屋设置</h2>
+
+                                                                                    <button class="close-settings" id="closeSettings">
+                                                                                                ×
+                                                                                                        </button>
+                                                                                                            </div>
+
+                                                                                                                <div class="settings-content">
+
+                                                                                                                       <div class="setting-item">
+                                                                                                                            <h3>🧑 我的头像</h3>
+
+                                                                                                                                <label class="upload-button">
+                                                                                                                                        上传图片
+
+                                                                                                                                                <input
+                                                                                                                                                            type="file"
+                                                                                                                                                                        id="userAvatarInput"
+                                                                                                                                                                                    accept="image/*"
+                                                                                                                                                                                                hidden
+                                                                                                                                                                                                        >
+                                                                                                                                                                                                            </label>
+                                                                                                                                                                                                            </div> 
+
+                                                                                                                                                                                            <div class="setting-item">
+                                                                                                                                                                                                        <h3>🤖 AI 头像</h3>
+                                                                                                                                                                                                                 <label class="upload-button">
+                                                                                                                                                                                                                        上传图片
+                                                                                                                                                                                                                            <input
+                                                                                                                                                                                                                                    type="file"
+                                                                                                                                                                                                                                            id="aiAvatarInput"
+                                                                                                                                                                                                                                                    accept="image/*"
+                                                                                                                                                                                                                                                            hidden
+                                                                                                                                                                                                                                                                >
+                                                                                                                                                                                                                                                                </label>   
+                                                                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                                                                                <div class="setting-item">
+                                                                                                                                                                                                                                                                            <h3>🖼️ 聊天背景</h3>
+                                                                                                                                                                                                                                                                                        <button class="upload-button">
+                                                                                                                                                                                                                                                                                                        上传图片
+                                                                                                                                                                                                                                                                                                                    </button>
+                                                                                                                                                                                                                                                                                                                            </div>
+
+                                                                                                                                                                                                                                                                                                                                </div>
+
+                                                                                                                                                                                                                                                                                                                                </div>
+                                                                    <div class="menu-overlay" id="menuOverlay"></div>
+
+<div class="side-menu" id="sideMenu">
+    <div class="side-menu-header">
+        <div>
+            <div class="side-menu-title">🏠 我的小屋</div>
+            <div class="side-menu-subtitle">把喜欢的东西都放进来</div>
+        </div>
+        <button class="menu-close" id="menuClose" aria-label="关闭菜单">×</button>
+    </div>
+
+    <nav class="menu-list">
+        <button class="menu-item active" data-page="chat">
+            <span class="menu-icon">💬</span>
+            <span>聊天</span>
+        </button>
+
+        <button class="menu-item" data-page="ai-settings">
+            <span class="menu-icon">⚙️</span>
+            <span>AI 设置</span>
+        </button>
+
+        <button class="menu-item" data-page="appearance">
+            <span class="menu-icon">🎨</span>
+            <span>外观装修</span>
+        </button>
+
+        <button class="menu-item" data-page="api">
+            <span class="menu-icon">🔑</span>
+            <span>API 管理</span>
+        </button>
+
+        <button class="menu-item" data-page="memory">
+            <span class="menu-icon">🧠</span>
+            <span>数据与记忆</span>
+        </button>
+
+        <div class="menu-divider"></div>
+
+        <button class="menu-item" data-page="about">
+            <span class="menu-icon">ℹ️</span>
+            <span>关于小屋</span>
+        </button>
+    </nav>
+
+    <div class="menu-placeholder" id="menuPlaceholder">
+        <div class="placeholder-icon">✨</div>
+        <div class="placeholder-title">这里以后会变得很丰富</div>
+        <div class="placeholder-text">现在先把小屋的菜单骨架搭起来，下一步再一个个填进去。</div>
+    </div>
+</div>
+
+<main class="chat-messages page-content" id="chatPage">
+                                                                                <div class="message-row ai-row">
+                                                                                        <div class="avatar">♡</div>
+
+                                                                                            <div>
+                                                                                                    <div class="ai-name">小屋 AI</div>
+
+                                                                                                            <div class="message ai-message">
+                                                                                                                        嗨～欢迎来到我的小屋！ฅ^•ﻌ•^ฅ
+                                                                                                                                </div>
+                                                                                                                                    </div>
+                                                                                                                                    </div>
+                                                                                                            
+                                                                                                                        <div class="message user-message">
+                                                                                                                                        你好呀！
+                                                                                                                                                    </div>
+                                                                                                                                                            </main>
+                                                                                                                                                            
+                                                                                                                                                                    <footer class="chat-input">
+                                                                                                                                                                                <textarea
+                                                                                                                                                                                    placeholder="和 AI 说点什么吧…"
+                                                                                                                                                                                        rows="1"
+                                                                                                                                                                                        ></textarea>
+                                                                                                                                                                                            <button>发送</button>
+                                                                                                                                                                                                    </footer>
+                                                                                                                                                                                                    
+                                                                                                                                                                                                        <script src="script.js"></script>
+                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        </body>
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        </html>               </html>
